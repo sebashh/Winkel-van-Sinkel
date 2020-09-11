@@ -1,0 +1,28 @@
+<div class="nav navbar-default" id="navvie">
+  <div id="logo">
+    <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
+      <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
+    </button>
+    <span class="website-logo">
+      <a [routerLink]="['/home']">
+        <img src="/assets/screen-shot-2016-12-20-at-11-46-41-am.png" alt="">
+      </a>
+    </span>
+  </div>
+
+<div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
+        <ul class="nav navbar-nav">
+          <li><a [routerLink]="['/shop']">Shop</a></li>
+          <li><a [routerLink]="['/home']">About</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" role="button">Shopping cart <span class="caret"> </span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Saving Data</a></li>
+              <li><a href="#">Fetching Data</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+</div>

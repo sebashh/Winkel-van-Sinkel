@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+<!--<label>Server</label>-->
+<!--<input type="text"-->
+<!--  class="form-control"-->
+<!--  (input)="onUpdateServerName($event)">-->
+
+<input type="text"
+       class="form-control"
+       [(ngModel)]="serverName">
+<!--<p>{{serverName}}</p>-->
+
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()">Add Server</button>
+<!--<p [innerText]="allowNewServer"></p>-->
+<!--<p>{{serverCreationStatus}}</p>-->
+      <p *ngIf="serverCreated; else noServer">Server was created, name is {{serverName}}</p>
+      <ng-template #noServer>
+        <p>No server was created!</p>
+      </ng-template>
+      <app-server *ngFor="let server of servers"></app-server>
+
+<!--Oefenopdracht databinding-->
+<!--<label>Username</label>-->
+<!--<input type="text"-->
+<!--  class="form-control"-->
+<!--  (input)="userName"-->
+<!--[(ngModel)]="userName">-->
+<!--<p>{{userName}}</p>-->
+<!--<button-->
+<!--class="btn btn-primary"-->
+<!--[disabled]="userName.length == 0"-->
+<!--(click)="onEmptyUserNameField($event)">-->
+<!--Remove username-->
+<!--</button>-->
+
+
+    </div>
+  </div>
+</div>
